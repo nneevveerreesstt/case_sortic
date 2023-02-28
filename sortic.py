@@ -1,3 +1,7 @@
+from colorama import *
+
+init()
+
 a = []
 b = []
 number = input()
@@ -12,12 +16,20 @@ def find_minimum():
         if a[i] < minimum:
             minimum = a[i]
     return minimum
+    print("List a:", end = " ")
+    print(a)
+    print("List b:", end = " ")
+    print(b)
 
 
 def rra():
     global a
     a = a[-1:] + a[:-1]
     print("rra")
+    print("List a:", end=" ")
+    print(a)
+    print("List b:", end=" ")
+    print(b)
 
 
 def pb():
@@ -28,6 +40,10 @@ def pb():
         b = b[-1:] + b[:-1]
         a.pop(0)
         print("pb")
+        print("List a:", end=" ")
+        print(a)
+        print("List b:", end=" ")
+        print(b)
 
 
 def pa():
@@ -37,7 +53,12 @@ def pa():
         a.append(b[0])
         a = a[-1:] + a[:-1]
         b.pop(0)
-        print("pa")
+        print(Fore.RED + "pa")
+
+        print("List a:", end=" ")
+        print(a)
+        print("List b:", end=" ")
+        print(b)
 
 while len(a) != 0:
     minimum1 = find_minimum()
