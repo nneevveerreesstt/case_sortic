@@ -21,7 +21,7 @@ def find_minimum():
 
 def sa():
     global a
-    if len(a)>1:
+    if len(a) > 2:
         a1 = a[0]
         a2 = a[1]
         a[0] = a2
@@ -29,7 +29,7 @@ def sa():
 
 def sb():
     global b
-    if len(b) > 1:
+    if len(b) > 2:
         b1 = b[0]
         b2 = b[1]
         b[0] = b2
@@ -125,7 +125,10 @@ for i in range(len(commands)):
 
 flag1 = True
 
+
 if flag == True:
+    if len(b) > 0:
+        flag1 = False
     for i in range(1, len(a)):
         if a[i-1]>a[i]:
             flag1 = False
